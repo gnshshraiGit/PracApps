@@ -4,16 +4,17 @@ namespace DesignPrac
     { 
         public static void Main(string[] args) 
         { 
-            DesignPracAbstractHierarchicalPattern.IMultipleFileMergeTemplate mergeTemplate = DesignPracAbstractHierarchicalPattern.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("CITI_CHAPS");
-            mergeTemplate.Execute();
-            mergeTemplate = DesignPracAbstractHierarchicalPattern.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("HSBC_CHAPS");
-            mergeTemplate.Execute();
+            DesignPracCompositionalStrategy.IMultipleFileMergeTemplate<DesignPracCompositionalStrategy.IMergeBehaviourStrategy> mergeTemplateP1 = DesignPracCompositionalStrategy.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("CITI_CHAPS");
+            mergeTemplateP1.Execute();
+            mergeTemplateP1 = DesignPracCompositionalStrategy.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("HSBC_CHAPS");
+            mergeTemplateP1.Execute();
 
 
-            // DesignPracCompositionalStrategy.IMultipleFileMergeTemplate<DesignPracCompositionalStrategy.IMergeBehaviourStrategy> mergeTemplate = DesignPracCompositionalStrategy.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("CITI_CHAPS");
-            // mergeTemplate.Execute();
-            // mergeTemplate = DesignPracCompositionalStrategy.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("HSBC_CHAPS");
-            // mergeTemplate.Execute();
+            DesignPracAbstractHierarchicalPattern.IMultipleFileMergeTemplate mergeTemplateP2 = DesignPracAbstractHierarchicalPattern.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("CITI_CHAPS");
+            mergeTemplateP2.Execute();
+            mergeTemplateP2 = DesignPracAbstractHierarchicalPattern.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("HSBC_CHAPS");
+            mergeTemplateP2.Execute();
+
         } 
     }
 }
