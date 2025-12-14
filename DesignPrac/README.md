@@ -7,84 +7,13 @@ The two provided programs employ different variations of established software de
 
 **Comparison Summary**
 
-|
-
-**Feature**
-
- |
-
-**Program 1: Compositional Strategy Pattern**
-
- |
-
-**Program 2: Hierarchical Template Method Pattern**
-
- |
-|
-
-**Primary Mechanism**
-
- |
-
-Uses **composition** (a "has-a" relationship). The TwoCsvFileMergeTemplate *contains* an IMergeBehaviourStrategy.
-
- |
-
-Uses **inheritance** (an "is-a" relationship). Concrete classes *inherit* behavior and structure from the abstract TwoCsvFileMergeTemplate.
-
- |
-|
-
-**Behavior Variation**
-
- |
-
-Behaviors (StartMerge, ReportMerge) are encapsulated in separate, interchangeable strategy objects that can be swapped dynamically.
-
- |
-
-Behaviors are implemented by overriding abstract methods (StartMerge, ReportMerge) in derived subclasses.
-
- |
-|
-
-**Flexibility**
-
- |
-
-High. The core *algorithm* (Execute) is separated from the *specific behaviors*. Behaviors can be reused or combined with different templates/algorithms.
-
- |
-
-Moderate. The core algorithm is fixed in the abstract base class. Custom behaviors are tightly coupled to the specific template implementation via inheritance.
-
- |
-|
-
-**Open/Closed Principle**
-
- |
-
-Follows well. New merge *behaviors* can be added simply by creating a new strategy class without modifying the existing template classes.
-
- |
-
-Less flexible. Modifying the base algorithm or shared logic might inadvertently impact all derived classes.
-
- |
-|
-
-**Code Structure**
-
- |
-
-Decoupled interfaces for template and strategy. Uses generics for type safety.
-
- |
-
-Tightly coupled class hierarchy. Relies on abstract methods and method overriding.
-
- |
+| **Feature** | **Program 1: Compositional Strategy Pattern** | **Program 2: Hierarchical Template Method Pattern** |
+| --- | --- | --- |
+| **Primary Mechanism** | Uses **composition** (a "has-a" relationship). The `TwoCsvFileMergeTemplate` **contains** an `IMergeBehaviourStrategy`. | Uses **inheritance** (an "is-a" relationship). Concrete classes **inherit** behavior and structure from the abstract `TwoCsvFileMergeTemplate`. |
+| **Behavior Variation** | Behaviors (`StartMerge`, `ReportMerge`) are encapsulated in separate, interchangeable **strategy objects** that can be swapped dynamically. | Behaviors are implemented by **overriding abstract methods** (`StartMerge`, `ReportMerge`) in derived subclasses. |
+| **Flexibility** | **High**. The core **algorithm** (`Execute`) is separated from the **specific behaviors**. Behaviors can be reused or combined with different templates/algorithms. | **Moderate**. The core algorithm is fixed in the abstract base class. Custom behaviors are **tightly coupled** to the specific template implementation via inheritance. |
+| **Open/Closed Principle** | **Follows well**. New merge **behaviors** can be added simply by creating a new strategy class without modifying the existing template classes. | **Less flexible**. Modifying the base algorithm or shared logic might inadvertently impact all derived classes. |
+| **Code Structure** | Decoupled interfaces for template and strategy. Uses generics for type safety. | Tightly coupled class hierarchy. Relies on abstract methods and method overriding. |
 
 **Program 1: Compositional Strategy Pattern**
 
