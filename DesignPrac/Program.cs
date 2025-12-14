@@ -4,12 +4,13 @@ namespace DesignPrac
     { 
         public static void Main(string[] args) 
         { 
+            //Program 1
             DesignPracCompositionalStrategy.IMultipleFileMergeTemplate<DesignPracCompositionalStrategy.IMergeBehaviourStrategy> mergeTemplateP1 = DesignPracCompositionalStrategy.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("CITI_CHAPS");
             mergeTemplateP1.Execute();
             mergeTemplateP1 = DesignPracCompositionalStrategy.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("HSBC_CHAPS");
             mergeTemplateP1.Execute();
 
-
+            //Program 2
             DesignPracAbstractHierarchicalPattern.IMultipleFileMergeTemplate mergeTemplateP2 = DesignPracAbstractHierarchicalPattern.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("CITI_CHAPS");
             mergeTemplateP2.Execute();
             mergeTemplateP2 = DesignPracAbstractHierarchicalPattern.MultipleFileMergeTemplateFactory.CreateMultipleFileMergeTemplate("HSBC_CHAPS");
